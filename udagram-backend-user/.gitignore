@@ -12,6 +12,7 @@ log.txt
 .vscode/
 npm-debug.log*
 
+secret_and_configuration/
 .idea/
 .ionic/
 .sourcemaps/

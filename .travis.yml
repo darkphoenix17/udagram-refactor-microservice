@@ -16,3 +16,25 @@ before_install:
 install:
   - docker-compose -f deployment/Docker/docker-compose-build.yml build --parallel 
   - docker-compose -f deployment/Docker/docker-compose-build.yml push
+
+script:
+  - docker --version # print the version for logging
+
+  - docker build -t udagram-backend-feed udagram-backend-feed
+  - docker tag udagram-backend-feed darkphoenix17/udagram-backend-feed:latest
+
+  - docker build -t udagram-frontend udagram-frontend
+  - docker tag udagram-frontend darkphoenix17/udagram-frontend:latest
+
+  - docker build -t udagram-backend-user udagram-backend-user
+  - docker tag udagram-backend-user darkphoenix17/udagram-backend-user:latest
+  
+  - docker build -t udagram-reverse-proxy deployment/docker
+  - docker tag udagram-reverse-proxy darkphoenix17/udagram-reverse-proxy:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push darkphoenix17/udagram-backend-feed
+  - docker push darkphoenix17/udagram-frontend
+  - docker push darkphoenix17/udagram-backend-user
+  - docker push darkphoenix17/udagram-reverse-proxy
