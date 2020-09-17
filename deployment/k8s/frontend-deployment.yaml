@@ -16,7 +16,7 @@ spec:
         api: external        
     spec:
       containers:
-      - image: darkphoenix17/udagram-frontend
+      - image: darkphoenix17/udagram-frontend:latest
         name: frontend
         imagePullPolicy: Always          
         ports:

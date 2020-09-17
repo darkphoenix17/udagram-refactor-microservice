@@ -15,7 +15,7 @@ spec:
         service: backend-user
     spec:
       containers:
-      - image: darkphoenix17/udagram-backend-user
+      - image: darkphoenix17/udagram-backend-user:latest
         name: backend-user 
         imagePullPolicy: Always  
         resources:
