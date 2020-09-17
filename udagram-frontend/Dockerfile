@@ -7,7 +7,6 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 RUN npm ci
-RUN npm audit fix
 # Bundle app source
 COPY . .
 RUN ionic build
