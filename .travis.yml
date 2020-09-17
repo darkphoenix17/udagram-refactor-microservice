@@ -29,7 +29,7 @@ script:
   - docker build -t udagram-backend-user udagram-backend-user
   - docker tag udagram-backend-user darkphoenix17/udagram-backend-user:latest
   
-  - docker build -t udagram-reverse-proxy deployment/docker
+  - docker build -t udagram-reverse-proxy deployment/Docker
   - docker tag udagram-reverse-proxy darkphoenix17/udagram-reverse-proxy:latest
 
 after_success:
