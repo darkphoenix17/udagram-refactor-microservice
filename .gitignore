@@ -2,3 +2,6 @@
 *env-configmap.yml
 *env-secret.yml
 *aws-secret.yml
+secret_and_configuration/aws-secret.yaml
+secret_and_configuration/env-configmap.yaml
+secret_and_configuration/env-secret.yaml
