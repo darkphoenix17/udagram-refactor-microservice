@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: __your_bucket_name__
+  AWS_PROFILE: __your-profile<generally default>__
+  AWS_REGION: __your_region__
+  JWT_SECRET: __random__
+  POSTGRES_DB: __your_db_instance name__
+  POSTGRES_HOST: __your_rds_hostname__
+  URL: __your_enternal_ip_found_in frontend_service__
+metadata:
+  name: env-config
